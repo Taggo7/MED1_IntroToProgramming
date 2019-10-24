@@ -1,36 +1,52 @@
 class Flower {
-  
- // Variables
- 
- float r;       // radius of the flower petal
- int n_petals;  // number of petals 
- float x;       // x-position of the center of the flower
- float y;       // y-position of the center of the flower
- int petalColor;//hexadecimal number for the color of petals
- 
-Flower(float temp_r, int temp_n_petals, float temp_x, float temp_y, int temp_petalColor) {
-  r=temp_r;
-  n_petals = temp_n_petals;
-  x=temp_x;
-  y=temp_y;
-  petalColor=temp_petalColor;
-}
 
-void display () {
-  
-  float ballX;
-  float ballY;
-  
-  fill(petalColor);
-  for (float i=0;i<PI*2;i+=2*PI/n_petals) {
-//  ballX=width/2 + r*cos(i);
-//  ballY=height/2 + r*sin(i);
-  ballX=x + r*cos(i);
-  ballY=y + r*sin(i);
-  ellipse(ballX,ballY,r,r); 
+  // variabler
+  float r;
+  float x; 
+  float y;
+  float SpeedX = random(-7, 10);
+  float SpeedY = random(-7, 10);
+  int n_petals;
+  int petalColor;
+
+  Flower(float temp_r, int temp_n_petals, float temp_x, float temp_y, int temp_petalColor) {
+    r = temp_r;
+    n_petals = temp_n_petals;
+    x = temp_x;
+    y = temp_y;
+    petalColor = temp_petalColor;
   }
-  fill(200,0,0);
-  ellipse(x,y,r*1.2,r*1.2);
-}
+
+  void display () {
+    float CenterX;
+    float CenterY;
+
+    fill(petalColor);
+    for (float i=0; i<PI*2; i+=2*PI/n_petals) {
+      CenterX = x + r*cos(i);
+      CenterY = y + r*sin(i);
+
+      ellipse(CenterX, CenterY, r, r);
+    }
+
+    fill(200, 255, 50);
+    ellipse(x, y, r*1.2, r*1.2);
+  }
+
+  // speed for the flower
+  void move() {    
+    x += SpeedX;
+    y += SpeedY;
+  }
+
+//The flower bounces on the walls 
+  void boundaries() {    
+    if (x > width - r || x < 0 + r) {
+      SpeedX = SpeedX * -1;    
+    }
+    if (y > height - r || y < 0 + r) {
+      SpeedY = SpeedY * -1;    
+    }
+  }
 
 }

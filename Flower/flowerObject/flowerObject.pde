@@ -1,27 +1,39 @@
-Flower myFlower1;  // the first instance of the Flower class
-Flower myFlower2;
-Flower myFlower3;
+//Flower classes
+Flower Flower0;    
+Flower Flower1;    
+Flower Flower2;    
 
 void setup() {
-  size(1600,1200);
-  background(#43AF76);
-  
-  int _r1= 60;
-  int _petals=7;
-  float _x=width/2;
-  float _y=height/2;
-  int _pc=#FFA000;
-  myFlower1 = new Flower(_r1,_petals,_x,_y,_pc);
-  myFlower2 = new Flower(_r1,_petals,_x+random(-100,100),_y,_pc);
-  myFlower3 = new Flower(_r1,_petals,_x+50,_y,_pc);
+  // The Size of the canvas
+  size(800, 800);   
 
-//  myFlower2 = new Flower();
-//   myFlower3 = new Flower();
+  // variabler
+  int r0 = 60;
+  int r1 = 20;
+  int r2 = 40;
+  int petals = 8;
+  int pc = #982E2E;
+  float x = width/2;
+  float y = height/2;
+
+  Flower0 = new Flower(r0, petals, x, y, pc);
+  Flower1 = new Flower(r1, petals, x+random(-100, 100), y, pc);
+  Flower2 = new Flower(r2, petals, x + 50, y, pc);
 }
 
-void draw(){
-  myFlower1.display();
-  myFlower2.display();
-  myFlower3.display();
-  noLoop();
+void draw() {
+  background(#67D1B2); 
+
+  Flower0.display();//The look of the flower
+  Flower0.move(); //getting the flower to move
+  Flower0.boundaries(); //bouncing on walls
+
+  Flower1.display(); 
+  Flower1.move();
+  Flower1.boundaries();
+
+  Flower2.display();  
+  Flower2.move();
+  Flower2.boundaries();
+
 }
