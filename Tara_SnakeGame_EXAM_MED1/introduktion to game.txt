@@ -1,0 +1,15 @@
+Introduction to the functionalities of my program
+
+-	My program is a snake game with one enemy and an obstacle to confuse the user.
+-	The high score always starts at 0 when the program runs anew.
+-	To start the game, you must click on the screen.
+-	The snake starts with only the head and you are supposed to get the snake a tail which will grow when the snake eats the snacks.
+-	The snacks are the non-moving circle on the screen.
+-	You will hear an eating sound when the snake gets the snack.
+-	You use the four arrow keys on the keyboard to decide the direction of the snake and the snake won’t start moving before you press one the arrows.
+-	It is possible to go through walls.
+-	The big moving square on the screen is not doing anything else than distracting the user.
+-	If the snake hits the enemy which is the non-moving square on the screen you start over, the high score will save until you close the program.
+-	If the snake hits its own tail the snake dies as well.
+-	You can see your score for the round in the upper left corner
+-	If you die, then start the game again by clicking the screen.
